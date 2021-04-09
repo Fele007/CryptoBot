@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ddab66fe-a63f-4ce2-8797-e49b1566a116</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CryptoBot.py</StartupFile>
+    <StartupFile>crypto_bot.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>CryptoBot</Name>
     <RootNamespace>CryptoBot</RootNamespace>
+    <InterpreterId>MSBuild|env_crypto_bot|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,28 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CryptoBot.py" />
+    <Compile Include="binance.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="request.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="crypto_bot.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env_crypto_bot\">
+      <Id>env_crypto_bot</Id>
+      <Version>3.8</Version>
+      <Description>env_crypto_bot (Python 3.8 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
