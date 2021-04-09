@@ -1,13 +1,15 @@
+import os
+from OpenSSL.crypto import sign
+
 class Binance(object):
     """ Encapsules communication with Binance """
 
     def __init__(self):
         """ Initialize bot and API """
 
-        # Set API-keys
         try:
-            apiKey=os.environ["crypto_bot_api_key"]
-            apiSecret=os.environ["crypto_bot_secret_key"]
+            self.key=os.environ["crypto_bot_api_key"]
+            self.secret=os.environ["crypto_bot_secret_key"]
         except:
             print("No API-key information available")
 
@@ -34,5 +36,3 @@ class Binance(object):
          """
         #wss://testnet.binance.vision/stream
 
-def sign():
-    pass

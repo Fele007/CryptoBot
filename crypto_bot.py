@@ -1,9 +1,20 @@
-import os, binance, request
+import broker_api, request
 from request import Request, Order
 
 if __name__ == "__main__":
+    api = broker_api.Binance()
     buy_request = Order("BTCEUR", 1, 40000)
-    pass
+    buy_request.sign(api)
+    print(buy_request.query_string)
+
+
+
+
+
+
+
+
+
 
 """def rawurlencode: 
     local value="$1"

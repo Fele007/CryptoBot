@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="binance.py">
+    <Compile Include="broker_api.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="request.py">
