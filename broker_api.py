@@ -13,9 +13,15 @@ class Binance(object):
         except:
             print("No API-key information available")
 
-        # Set and test api
         self.address = "https://testnet.binance.vision/api"
-        #wss://testnet.binance.vision/ws     Secure Version??
+        self.headers={"X-MBX-APIKEY": self.key}
+
+
+
+
+
+
+        # TODO: Was ist das --> wss://testnet.binance.vision/ws     
         """ 
         Request:
         GET /chat HTTP/1.1
@@ -34,5 +40,5 @@ class Binance(object):
          Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
          Sec-WebSocket-Protocol: chat
          """
-        #wss://testnet.binance.vision/stream
+        # TODO: Was ist das --> wss://testnet.binance.vision/stream    
 
