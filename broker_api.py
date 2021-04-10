@@ -13,7 +13,7 @@ class Binance(object):
         except:
             print("No API-key information available")
 
-        self.address = "https://testnet.binance.vision/api"
+        self.address = "https://testnet.binance.vision/api/v3"
         self.headers={"X-MBX-APIKEY": self.key}
 
 
